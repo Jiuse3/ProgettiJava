@@ -1,24 +1,18 @@
 package com.youssoufaseydi.B.progettoBe4.CONFIGURATION;
 
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-
 
 import com.youssoufaseydi.B.progettoBe4.ENTITY.Edificio;
 import com.youssoufaseydi.B.progettoBe4.ENTITY.Postazione;
 import com.youssoufaseydi.B.progettoBe4.ENTITY.Utente;
 import com.youssoufaseydi.B.progettoBe4.enumerated.TipoPostazione;
 
-
-
-
-
-
-@PropertySource("classpath:application.properties")
-@Configurable
-public class Configuration {
+@PropertySource("application.properties")
+@Configuration
+public class Configurationh {
 
 	/////////////////////////EDIFICI/////////////////////
 	
@@ -33,13 +27,13 @@ public class Configuration {
 	private String e1Citta;
 
 	@Bean
-	Edificio edi1() {
-		Edificio edi = Edificio.builder()
+	 Edificio e1() {
+		Edificio e = Edificio.builder()
 				.name(e1Nome)
-				.indirizzo(e1Indirizzo)
+				.indirizzo(e2Indirizzo)
 				.citta(e1Citta)
 				.build();
-		return edi;
+		return e;
 	}
 	
 	
@@ -57,7 +51,7 @@ public class Configuration {
 	@Bean
 	Edificio edi2() {
 		Edificio e = Edificio.builder()
-				.nome(e2Nome)
+				.name(e2Nome)
 				.indirizzo(e2Indirizzo)
 				.citta(e2Citta)
 				.build();
@@ -68,19 +62,19 @@ public class Configuration {
 	
 	@Bean
 	Utente u1() {
-		Utente e = Utente.builder().fullname("Joussoufa seydi").username("Jiuse").email("jou-inter@hotmail.it").build();
+		Utente e = Utente.builder().fullName("Joussoufa seydi").userName("Jiuse").email("jou-inter@hotmail.it").build();
 		return e;
 	}
 
 	@Bean
 	Utente u2() {
-		Utente e = Utente.builder().fullname("Anish frigerio").username("tom").email("tom@gmail.com").build();
+		Utente e = Utente.builder().fullName("Anish frigerio").userName("tom").email("tom@gmail.com").build();
 		return e;
 	}
 
 	@Bean
 	Utente u3() {
-		Utente e = Utente.builder().fullname("Giovanni Galatioto").username("gigi").email("gigigala@gmail.com").build();
+		Utente e = Utente.builder().fullName("Giovanni Galatioto").userName("gigi").email("gigigala@gmail.com").build();
 		return e;
 	}
 	
@@ -89,19 +83,19 @@ public class Configuration {
 	
 	@Bean
 	Postazione p1() {
-		Postazione e = Postazione.builder().descrizione(" privato").tipo(TipoPostazione.PRIVATO).max_occupanti(10).edificio(edi1()).build();
+		Postazione e = Postazione.builder().descrizione(" privato").tipo(TipoPostazione.PRIVATO).maxOccupanti(10).edificio(e1()).build();
 		return e;
 	}
 	
 	@Bean
 	Postazione p2() {
-		Postazione e = Postazione.builder().descrizione("Sala riunioni").tipo(TipoPostazione.SALARIUNIONI).max_occupanti(20).edificio(edi2()).build();
+		Postazione e = Postazione.builder().descrizione("Sala riunioni").tipo(TipoPostazione.SALARIUNIONI).maxOccupanti(20).edificio(edi2()).build();
 		return e;
 	}
 	
 	@Bean
 	Postazione p3() {
-		Postazione e = Postazione.builder().descrizione("Spazio libero").tipo(TipoPostazione.OPENSPACE).max_occupanti(50).edificio(edi2()).build();
+		Postazione e = Postazione.builder().descrizione("Spazio libero").tipo(TipoPostazione.OPENSPACE).maxOccupanti(50).edificio(edi2()).build();
 		return e;
  }
 }

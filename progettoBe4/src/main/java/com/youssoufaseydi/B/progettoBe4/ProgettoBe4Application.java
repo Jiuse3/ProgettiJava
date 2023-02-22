@@ -11,7 +11,7 @@ diagrammi ER: opzionali*/
 
 package com.youssoufaseydi.B.progettoBe4;
 
-import java.lang.module.Configuration;
+
 
 import java.util.List;
 
@@ -22,6 +22,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+
+import com.youssoufaseydi.B.progettoBe4.CONFIGURATION.Configurationh;
 import com.youssoufaseydi.B.progettoBe4.DAO.EdificioService;
 import com.youssoufaseydi.B.progettoBe4.DAO.PostazioneService;
 import com.youssoufaseydi.B.progettoBe4.DAO.PrenotazioneService;
@@ -33,7 +35,7 @@ import com.youssoufaseydi.B.progettoBe4.ENTITY.Prenotazione;
 import com.youssoufaseydi.B.progettoBe4.ENTITY.Utente;
 import com.youssoufaseydi.B.progettoBe4.enumerated.TipoPostazione;
 
-import lombok.Getter;
+
 
 
 
@@ -56,7 +58,7 @@ public class ProgettoBe4Application implements CommandLineRunner{
 		@Autowired
 		PrenotazioneService prenos;
 		
-		ApplicationContext ctx = new AnnotationConfigApplicationContext(Configuration.class);
+		ApplicationContext ctx = new AnnotationConfigApplicationContext(Configurationh.class);
 
 	
 

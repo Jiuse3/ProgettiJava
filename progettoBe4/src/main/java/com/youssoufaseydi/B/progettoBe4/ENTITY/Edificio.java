@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Entity
+//@Entity
 @Table(name = "edificio")
 @Getter
 @Setter
@@ -37,9 +37,10 @@ public class Edificio {
 	private String indirizzo;
 	private String citta;
 
-	@OneToMany(mappedBy = "edificio")
-	private List<Postazione> postazioni;
+	//@OneToMany(mappedBy = "edificio")
+	//private List<Postazione> postazioni;
 
+	
 	
 
 	
